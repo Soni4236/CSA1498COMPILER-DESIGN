@@ -1,0 +1,50 @@
+%{
+#include<stdio.h>
+%}
+
+%%
+
+if|else|while|int|switch|for|char { printf("its a keyword");}
+[a-zA-Z0-9]+ { printf("\n%s is IDENTIFIER", yytext);}
+
+%%
+int yywrap( ){}
+int main()
+{
+	while( yylex());
+}
+output:
+c) Microsoft Corporation. All rights reserved.
+
+C:\Users\soni>cd compiler
+
+C:\Users\soni\compiler>set path=C:\Program Files (x86)\GnuWin32\bin
+
+C:\Users\soni\compiler>flex keywordidentifier.l.txt
+
+C:\Users\soni\compiler>set path=C:\MinGW\bin
+
+C:\Users\soni\compiler>gcc lex.yy.c
+
+C:\Users\soni\compiler>a
+This is sonipriya,from cse department.
+
+This is IDENTIFIER
+is is IDENTIFIER
+sonipriya is IDENTIFIER,
+from is IDENTIFIER
+cse is IDENTIFIER
+department is IDENTIFIER.
+a=a+b+c*d%e
+
+a is IDENTIFIER=
+a is IDENTIFIER+
+b is IDENTIFIER+
+c is IDENTIFIER*
+d is IDENTIFIER%
+e is IDENTIFIER
+int student,float marks
+its a keyword
+student is IDENTIFIER,
+float is IDENTIFIER
+marks is IDENTIFIER
