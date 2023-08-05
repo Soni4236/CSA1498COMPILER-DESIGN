@@ -1,0 +1,35 @@
+%%
+[A-Z]+[\t\n ] { printf("%s is a capital letter\n",yytext); }
+.  ;
+%%
+
+int main( ) 
+{
+	printf("Enter String :\n");
+	yylex();
+}
+int yywrap( )
+{
+	return 1;
+}
+output:
+Microsoft Windows [Version 10.0.22000.1936]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\soni>cd compiler
+
+C:\Users\soni\compiler>set path=C:\Program Files (x86)\GnuWin32\bin
+
+C:\Users\sonil\compiler>flex capital.l.txt
+
+C:\Users\soni\compiler>set path=C:\MinGW\bin
+
+C:\Users\soni\compiler>gcc lex.yy.c
+
+C:\Users\soni\compiler>a
+Enter String :
+SONIPRIYA
+ is a capital letter
+hey
+hey
+  is not a capital letter
