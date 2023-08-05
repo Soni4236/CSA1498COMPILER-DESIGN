@@ -1,0 +1,36 @@
+%{
+#include <stdio.h>
+#include <string.h>
+%}
+
+%%
+
+[a-zA-Z]+ { printf("Length of word '%s' is: %lu\n", yytext, strlen(yytext));}
+
+%% 
+int yywrap(){}
+
+int main(void) {
+    yylex();
+    return 0;
+}
+output:
+Microsoft Windows [Version 10.0.22000.2176]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\soni>cd compiler
+
+C:\Users\soni\compiler>set path=
+
+C:\Users\soni\compiler>set path=C:\Program Files (x86)\GnuWin32\bin
+
+C:\Users\soni\compiler>flex lengthofword.l.txt
+
+C:\Users\soni\compiler>set path=C:\MinGW\bin
+
+C:\Users\soni\compiler>gcc lex.yy.c
+
+C:\Users\soni\compiler>a
+be yourself
+Length of word 'be' is: 2
+ Length of word 'yourself' is: 8
